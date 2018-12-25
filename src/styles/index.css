@@ -130,6 +130,7 @@ section .box .banner {
   height: 2.3rem;
   text-align: center;
   position: relative;
+  margin-top: 15px;
 }
 
 section .box .banner img {
@@ -218,5 +219,32 @@ section .box .banner .content .content_box dl dd p:nth-child(3) span:nth-child(2
 footer {
   width: 100%;
   height: .66rem;
-  background: red;
+  background: #eee;
+}
+
+footer .foot {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+footer .foot dl {
+  flex: 3;
+  text-align: center;
+}
+
+footer .foot dl dt {
+  width: 100%;
+  height: .4rem;
+  line-height: .4rem;
+}
+
+footer .foot dl dt i {
+  font-size: .2rem;
+}
+
+footer .foot dl dd {
+  width: 100%;
+  height: .33rem;
+  font-size: .14rem;
 }
