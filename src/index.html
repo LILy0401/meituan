@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../src/styles/index.css">
     <link rel="stylesheet" href="../src/iconfont/iconfont.css">
     <script src="../src/scripts/rem.js"></script>
+    <script src="../src/scripts/swiper.js"></script>
 </head>
 <body>
     <header>
@@ -25,10 +26,39 @@
                 <input type="text" placeholder="米线">
                 <i class="iconfont">&#xe62f;</i>
             </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" id="swiper_one">
+                            
+                    </div>
+                   
+                </div>
+            </div>
+           
         </div>
     </section>
     <footer>
 
     </footer>
+    <script src="../src/scripts/jquery-3.3.1.js"></script>
+    <script>
+        var html='';
+        $.ajax({
+            url:'./data/data.json',
+            type:'get',
+            dataType:'json',
+            success:function(data){
+               data.forEach(element => {
+                html+=`<dl>
+                            <dt>
+                                <img src="${element.img}" alt="">
+                            </dt>
+                            <dd>${element.title}</dd>
+                        </dl>`
+                });
+                $('#swiper_one').html(html);
+            }
+        })
+    </script>
 </body>
 </html>
