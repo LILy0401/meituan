@@ -89,7 +89,7 @@ section .box .swiper-container {
 }
 
 section .box .swiper-container .swiper-wrapper {
-  width: 100%;
+  width: auto;
   height: 100%;
 }
 

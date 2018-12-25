@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../src/styles/index.css">
-    <link rel="stylesheet" href="../src/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <link rel="stylesheet" href="./styles/swiper.css">
     <script src="../src/scripts/rem.js"></script>
-    <script src="../src/scripts/swiper.js"></script>
+    
 </head>
 <body>
     <header>
@@ -31,8 +32,11 @@
                     <div class="swiper-slide" id="swiper_one">
                             
                     </div>
-                   
+                    <div class="swiper-slide" id="swiper_two">
+                            
+                    </div>
                 </div>
+                <div class="swiper-pagination" id='pagination'></div>
             </div>
            
         </div>
@@ -41,14 +45,17 @@
 
     </footer>
     <script src="../src/scripts/jquery-3.3.1.js"></script>
+    <script src="../src/scripts/swiper.js"></script>
     <script>
         var html='';
+        var htmls='';
         $.ajax({
             url:'./data/data.json',
             type:'get',
             dataType:'json',
             success:function(data){
-               data.forEach(element => {
+                console.log(data.one)
+               data.one.forEach(element => {
                 html+=`<dl>
                             <dt>
                                 <img src="${element.img}" alt="">
@@ -57,8 +64,32 @@
                         </dl>`
                 });
                 $('#swiper_one').html(html);
+                data.two.forEach(elements => {
+                htmls+=`<dl>
+                            <dt>
+                                <img src="${elements.img}" alt="">
+                            </dt>
+                            <dd>${elements.title}</dd>
+                        </dl>`
+                });
+                $('#swiper_two').html(htmls);
+
+                new Swiper('.swiper-container',{
+                    autoplay:{
+                        delay:1500,
+                    },
+                    loop:true,
+                    pagination:{
+                        el:"#pagination",
+                        clickable:true
+                    }
+                })
+                
             }
         })
+        
+    
+        
     </script>
 </body>
 </html>
