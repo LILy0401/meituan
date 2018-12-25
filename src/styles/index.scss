@@ -3,9 +3,78 @@
     list-style: none;
     padding: 0;
     box-sizing: border-box;
+    font-size: .14rem;
 }
 body,html{
     width: 100%;
     height: 100%;
     background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    width: 100%;
+    height: .5rem;
+   
+    .top{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        
+        span:nth-child(1){
+            font-size: .2rem;
+            font-weight: bold;
+            flex: 4;
+            padding-left: .1rem;
+        }
+        span:nth-child(2){
+            border: 1px solid #eee;
+            padding:5px .1rem;
+            margin-right: .1rem;
+            border-radius: .2rem;
+            display: flex;
+            color:#ccc;
+            i{
+                font-size: .2rem;
+                color: black;
+                padding:0 .1rem;
+            }
+        }
+    }
+}
+section{
+    width: 100%;
+    height: 100%;
+    .box{
+        width: 100%;
+        height: auto;
+        .inp{
+            width: 100%;
+            height: .45rem;
+            background: pink;
+            line-height: .4rem;
+            position: relative;
+            input{
+                margin-left: .35rem;
+                width: 80%;
+                height: .35rem;
+                border: 0;
+                background: #eee;
+                border-radius: 5px;
+                padding-left: .25rem;
+            }
+            i{
+                position: absolute;
+                top: 0;
+                left: .4rem;
+            }
+        }
+    }
+}
+footer{
+    width: 100%;
+    height: .66rem;
+    background: red;
 }
